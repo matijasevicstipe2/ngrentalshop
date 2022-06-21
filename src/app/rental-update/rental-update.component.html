@@ -1,0 +1,52 @@
+<div class="basic2" *ngIf="rental">
+  <h2>UPDATE RENTAL</h2>
+  <div class="basic">
+    <h3>UPDATE</h3>
+    <div>
+      <label>USER:
+        <div>
+          <input value="{{rental.userId}}" type="number" #user />
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>VHS:
+        <div>
+          <input value="{{rental.vhsId}}" type="number" #vhs />
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>RENTAL_DATE:
+        <div>
+          <input value="{{rental.rentalDate}}" #rental_date />
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>RETURN_DATE:
+        <div>
+          <input value="{{rental.returnDate}}" #return_date />
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>STATUS:
+        <div>
+          <select [value]="rental.status" #status >
+            <option value="OUT">OUT</option>
+            <option value="RETURNED">RETURNED</option>
+            <option value="LATE">LATE</option>
+          </select>
+        </div>
+      </label>
+    </div>
+    <button class="button2" (click)="update(+user.value,+vhs.value,rental_date.value,return_date.value,status.value);">
+      UPDATE
+    </button>
+    <button  class="button2" (click)="goBack()">GO BACK
+    </button>
+  </div>
+
+</div>
+

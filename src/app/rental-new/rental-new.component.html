@@ -1,0 +1,51 @@
+<div class="basic2">
+  <h2>ADD NEW RENTAL</h2>
+  <div class="basic">
+    <h3>NEW RENTAL</h3>
+    <div>
+      <label>USER:
+        <div>
+          <input type="number" #user />
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>VHS:
+        <div>
+          <input type="number" #vhs />
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>RENTAL DATE(yyyy-MM-dd):
+        <div>
+          <input #rental_date />
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>RETURN DATE(yyyy-MM-dd):
+        <div>
+          <input #return_date />
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>STATUS:
+        <div>
+          <select #status >
+            <option value="OUT">OUT</option>
+            <option value="RETURNED">RETURNED</option>
+            <option value="LATE">LATE</option>
+          </select>
+        </div>
+      </label>
+    </div>
+    <button class="button2" (click)="add(+user.value,+vhs.value,rental_date.value,return_date.value,status.value);  user.value=''; vhs.value=''; rental_date.value=''; return_date.value=''; status.value='RETURNED';">
+      ADD
+    </button>
+    <button class="button2" (click)="goBack()">GO BACK
+    </button>
+  </div>
+
+</div>

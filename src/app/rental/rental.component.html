@@ -1,0 +1,31 @@
+<div class="basic">
+  <h2>RENTAL MODE</h2>
+  <ul class="rental">
+    <li *ngFor="let rental of rentals">
+      <div><span class="">USER:{{rental.userId}}
+        VHS:{{rental.vhsId}}
+        RENTAL DATE:{{rental.rentalDate}}
+        RETURN DATE:{{rental.returnDate}}</span>
+        PAID:{{rental.paid}}
+        STATUS:{{rental.status}}</div>
+      <button  class="button" title=""(click)="updateRental(rental.id)">
+        UPDATE
+      </button>
+      <button class="smallb" title=""
+              (click)="delete(rental)">X
+      </button>
+      <div *ngIf="rental.lateFee > 0" >
+        <h3 class="fee">LATE FEE: {{rental.lateFee}}$</h3>
+      </div>
+    </li>
+  </ul>
+  <div class="basic2">
+    <button class="button2" (click)="newRental()">
+      ADD NEW RENTAL
+    </button>
+    <button class="button2" (click)="goBack()">
+      GO BACK
+    </button>
+  </div>
+
+</div>

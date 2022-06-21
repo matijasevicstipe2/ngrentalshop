@@ -1,0 +1,12 @@
+<div class="basic2" *ngIf="vhs">
+  <h2>{{vhs.name}}</h2>
+  <div><span>{{vhs.info}}</span>
+    <div>RATING: {{vhs.rating}}</div>
+  <div>YEAR OF RELEASE: {{vhs.releaseYear}}</div>
+  <div>RUNTIME: {{vhs.runtime}}min</div>
+  <div>IMDB SCORE: {{vhs.score}}/10</div>
+    <div><span>PRICE: </span>{{vhs.price}} $</div></div>
+
+
+  <button class="button2" (click)="goBack()">GO BACK</button>
+</div>

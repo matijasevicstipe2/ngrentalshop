@@ -1,0 +1,20 @@
+<div class="basic">
+  <h2>VHS MODE</h2>
+  <ul class="vhs">
+    <li *ngFor="let vhs of vhses">
+      <a routerLink="/detail/{{vhs.id}}">
+        <span>{{vhs.name}}({{vhs.releaseYear}})</span> <span >     {{vhs.price}}$</span>
+      </a>
+      <button *ngIf="isUserAdmin"  class="button" title="update vhs"(click)="updateVHS(vhs.id)">
+        UPDATE
+      </button>
+      <button *ngIf="isUserAdmin" class="smallb" title="delete vhs"
+              (click)="delete(vhs)">X
+      </button>
+    </li>
+  </ul>
+  <button class="button2" *ngIf="isUserAdmin" (click)="newVHS()">
+    ADD NEW VHS
+  </button>
+  <button class="button2" (click)="goBack()">GO BACK</button>
+</div>

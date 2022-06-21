@@ -1,0 +1,69 @@
+<div class="basic2" *ngIf="vhs">
+  <h2>UPDATE VHS</h2>
+  <div class="basic">
+    <h3>UPDATE</h3>
+    <div>
+      <label>TITLE:
+        <div>
+          <input value="{{vhs.name}}" #title />
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>INFO:
+        <div>
+          <input value="{{vhs.info}}" #info />
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>RELEASE YEAR:
+        <div>
+          <input value="{{vhs.releaseYear}}" #release_year/>
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>RATING:
+        <div>
+          <select [value]="vhs.rating" #rating >
+            <option value="G">G</option>
+            <option value="PG">PG</option>
+            <option value="PG13">PG13</option>
+            <option value="R">R</option>
+            <option value="NC17">NC17</option>
+          </select>
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>RUNTIME:
+        <div>
+          <input value="{{vhs.runtime}}"type="number" #runtime />
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>SCORE:
+        <div>
+          <input value="{{vhs.score}}"type="number" #score />
+        </div>
+      </label>
+    </div>
+    <div>
+      <label>PRICE($):
+        <div>
+          <input value="{{vhs.price}}"type="number" #price />
+        </div>
+      </label>
+    </div>
+
+    <button class="button2" (click)="update(title.value,info.value,+release_year.value,rating.value,+runtime.value,+score.value,+price.value);">
+      UPDATE
+    </button>
+    <button class="button2" (click)="goBack()">GO BACK
+    </button>
+  </div>
+</div>
+
+

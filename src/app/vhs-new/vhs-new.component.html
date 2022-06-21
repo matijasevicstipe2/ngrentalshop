@@ -1,0 +1,68 @@
+
+<div class="basic">
+  <h2>ADD NEW VHS</h2>
+  <h3>NEW VHS</h3>
+  <div>
+    <label>TITLE:
+      <div>
+        <input #title />
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>INFO:
+      <div>
+        <input #info />
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>RELEASE YEAR:
+      <div>
+        <input type="number" #releaseYear/>
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>RATING:
+      <div>
+        <select #rating >
+          <option value="G">G</option>
+          <option value="PG">PG</option>
+          <option value="PG13">PG13</option>
+          <option value="R">R</option>
+          <option value="NC17">NC17</option>
+        </select>
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>RUNTIME:
+      <div>
+        <input type="number" #runtime />
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>SCORE:
+      <div>
+        <input type="number" #score />
+      </div>
+    </label>
+  </div>
+  <div>
+    <label>PRICE($):
+      <div>
+        <input type="number" #price />
+      </div>
+    </label>
+  </div>
+
+  <button class="button2" (click)="add(title.value,info.value,+releaseYear.value,rating.value,+runtime.value,+score.value,+price.value);
+  title.value=''; info.value=''; releaseYear.value=''; rating.value='PG'; runtime.value=''; score.value=''; price.value=''">
+    ADD
+  </button>
+  <button class="button2" (click)="goBack()">GO BACK
+  </button>
+</div>
+

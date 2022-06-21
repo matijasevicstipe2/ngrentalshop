@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {AuthenticationService} from "./security/authentication.service";
+import {Router} from "@angular/router";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ngrentalshop';
+  title = 'Rental Shop';
+  currentLanguage: string | undefined;
+
+  constructor(
+    public authenticationService: AuthenticationService,
+    private router: Router) {
+
+  }
+
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']).then();
+  }
+
 }
